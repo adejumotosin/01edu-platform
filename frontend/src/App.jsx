@@ -8,13 +8,13 @@ import './styles/global.css'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/01edu-platform">
       <Layout>
         <Routes>
-          <Route path="/"         element={<CurriculumPage />} />
-          <Route path="/ai"       element={<AIPage />} />
+          <Route path="/" element={<CurriculumPage />} />
+          <Route path="/ai" element={<AIPage />} />
           <Route path="/progress" element={<ProgressPage />} />
-          <Route path="/about"    element={<AboutPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>
