@@ -1,0 +1,97 @@
+.card {
+  position: relative;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  animation: fade-up 0.3s ease both;
+}
+.card:hover {
+  border-color: var(--border2);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+  background: var(--bg3);
+}
+
+.accent {
+  height: 2px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.body {
+  padding: 18px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lang {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 3px 8px; border-radius: 3px;
+  border: 1px solid; background: rgba(255,255,255,0.04);
+}
+.diff {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.title {
+  font-size: 16px; font-weight: 800;
+  color: var(--text); line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.card:hover .title { color: #fff; }
+
+.desc {
+  font-size: 13px; color: var(--text2);
+  line-height: 1.6; flex: 1;
+}
+
+.tags {
+  display: flex; flex-wrap: wrap; gap: 5px;
+}
+.tag {
+  font-size: 10px; padding: 2px 7px;
+  border-radius: 3px; background: var(--bg4);
+  color: var(--text3); border: 1px solid var(--border);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+
+.footer {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.cta {
+  font-size: 12px; font-weight: 700;
+  color: var(--amber); letter-spacing: 0.04em;
+  opacity: 0; transition: opacity 0.2s;
+}
+.card:hover .cta { opacity: 1; }
+
+.statusBtn {
+  font-size: 10px; padding: 3px 8px;
+  border-radius: 4px; border: 1px solid;
+  background: transparent; cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600; letter-spacing: 0.06em;
+  transition: all 0.15s;
+}
+.statusBtn:hover { filter: brightness(1.3); }

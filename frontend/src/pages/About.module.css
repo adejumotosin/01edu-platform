@@ -1,0 +1,60 @@
+.page {
+  max-width: 800px; margin: 0 auto;
+  padding: 48px 40px 60px;
+  display: flex; flex-direction: column; gap: 36px;
+}
+.badge {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  font-weight: 700; letter-spacing: 0.16em; color: var(--amber);
+}
+.title { font-size: 32px; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+.lead { font-size: 16px; color: var(--text2); line-height: 1.8; }
+.link { color: var(--amber); text-decoration: none; }
+.link:hover { text-decoration: underline; }
+
+.grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.card {
+  padding: 20px; background: var(--bg2);
+  border: 1px solid var(--border); border-radius: 8px;
+  display: flex; flex-direction: column; gap: 8px;
+  transition: border-color 0.15s;
+}
+.card:hover { border-color: var(--border2); }
+.cardIcon { font-size: 20px; color: var(--amber); }
+.cardTitle { font-size: 15px; font-weight: 700; color: var(--text); }
+.cardDesc { font-size: 13px; color: var(--text2); line-height: 1.65; }
+
+.stack, .setup {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 8px; overflow: hidden;
+}
+.stackTitle, .setupTitle {
+  padding: 12px 20px;
+  background: var(--bg3); border-bottom: 1px solid var(--border);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; color: var(--text3);
+}
+.stackItems { display: flex; flex-direction: column; }
+.stackItem {
+  display: flex; align-items: center; gap: 16px;
+  padding: 12px 20px; border-bottom: 1px solid var(--border);
+}
+.stackItem:last-child { border-bottom: none; }
+.stackLabel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: var(--amber);
+  min-width: 80px; font-weight: 700;
+}
+.stackTech { font-size: 13px; color: var(--text2); }
+
+.code {
+  padding: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; color: var(--green);
+  line-height: 2; white-space: pre;
+  overflow-x: auto;
+}

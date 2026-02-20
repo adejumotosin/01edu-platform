@@ -1,0 +1,193 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg2);
+}
+.panel.compact { font-size: 13px; }
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg3);
+  flex-shrink: 0;
+}
+.headerLeft { display: flex; align-items: center; gap: 8px; }
+.liveIndicator {
+  width: 7px; height: 7px;
+  background: var(--green); border-radius: 50%;
+  animation: pulse 1.8s infinite;
+}
+.title {
+  font-size: 12px; font-weight: 700;
+  color: var(--green); letter-spacing: 0.1em;
+  font-family: 'JetBrains Mono', monospace;
+}
+.clearBtn {
+  font-size: 11px; color: var(--text3);
+  background: none; border: none; cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+  transition: color 0.15s;
+}
+.clearBtn:hover { color: var(--red); }
+
+/* Modes */
+.modes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.modeBtn {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 2px; padding: 10px 4px;
+  background: var(--bg2); border: none; cursor: pointer;
+  color: var(--text3); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.06em; transition: all 0.15s;
+  font-family: 'Syne', sans-serif;
+}
+.modeBtn:hover { background: var(--bg3); color: var(--text2); }
+.modeBtn.modeActive { background: var(--amber-dim); color: var(--amber); }
+.modeBtn span:first-child { font-size: 14px; }
+
+/* Code review input */
+.codeInputWrap {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  flex-shrink: 0;
+}
+.codeInput {
+  width: 100%; background: var(--bg2);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  color: var(--text); font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; line-height: 1.6; padding: 10px;
+  resize: vertical; outline: none; transition: border 0.15s;
+}
+.codeInput:focus { border-color: var(--amber); }
+
+/* Messages */
+.messages {
+  flex: 1; overflow-y: auto;
+  padding: 16px; display: flex;
+  flex-direction: column; gap: 14px;
+}
+
+.empty {
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; padding: 40px 16px; gap: 10px;
+  color: var(--text3);
+}
+.emptyIcon { font-size: 36px; color: var(--border2); margin-bottom: 4px; }
+.empty p { font-size: 13px; line-height: 1.6; }
+.emptySubject { color: var(--text2); }
+.emptySubject strong { color: var(--amber); }
+
+.quickPrompts {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  justify-content: center; margin-top: 12px;
+}
+.quickBtn {
+  font-size: 11px; padding: 5px 10px; border-radius: 4px;
+  background: var(--bg3); border: 1px solid var(--border);
+  color: var(--text2); cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+  transition: all 0.15s;
+}
+.quickBtn:hover { border-color: var(--amber); color: var(--amber); }
+
+/* Message rows */
+.msgRow {
+  display: flex; align-items: flex-start; gap: 10px;
+  animation: fade-up 0.2s ease;
+}
+.userRow { flex-direction: row-reverse; }
+
+.avatar {
+  width: 24px; height: 24px; border-radius: 4px;
+  background: var(--bg3); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; color: var(--text3); flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.bubble {
+  max-width: 88%; padding: 10px 14px;
+  border-radius: 8px; font-size: 13px; line-height: 1.7;
+}
+.bubble.user {
+  background: var(--amber-dim); color: var(--text);
+  border: 1px solid rgba(245,166,35,0.2);
+  border-radius: 8px 8px 2px 8px;
+}
+.bubble.assistant {
+  background: var(--bg3); color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px 8px 8px 2px;
+}
+.bubble p { margin: 0 0 8px; }
+.bubble p:last-child { margin-bottom: 0; }
+.bubble h1, .bubble h2, .bubble h3 { margin: 12px 0 6px; font-size: 14px; color: var(--amber); }
+.bubble ul, .bubble ol { margin: 6px 0 6px 18px; }
+.bubble li { margin: 3px 0; }
+.inlineCode {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; background: var(--bg);
+  padding: 1px 5px; border-radius: 3px;
+  border: 1px solid var(--border);
+}
+
+.typing { display: flex; gap: 5px; padding: 4px 0; }
+.typing span {
+  width: 6px; height: 6px; background: var(--text3);
+  border-radius: 50%; animation: bounce-dot 1.2s infinite;
+}
+.typing span:nth-child(2) { animation-delay: 0.2s; }
+.typing span:nth-child(3) { animation-delay: 0.4s; }
+
+/* Input area */
+.inputArea {
+  padding: 12px;
+  border-top: 1px solid var(--border);
+  background: var(--bg2);
+  flex-shrink: 0;
+}
+.inputRow { display: flex; gap: 8px; margin-bottom: 8px; }
+.input {
+  flex: 1; padding: 9px 12px;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--radius); color: var(--text);
+  font-size: 13px; font-family: 'Syne', sans-serif;
+  resize: none; outline: none; line-height: 1.5;
+  transition: border 0.15s;
+}
+.input:focus { border-color: var(--amber); }
+.input::placeholder { color: var(--text3); }
+.sendBtn {
+  width: 40px; flex-shrink: 0;
+  background: var(--amber); border: none; border-radius: var(--radius);
+  color: var(--bg); font-size: 18px; cursor: pointer;
+  transition: all 0.15s; display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+}
+.sendBtn:hover:not(:disabled) { filter: brightness(1.15); transform: scale(1.04); }
+.sendBtn:disabled { background: var(--bg3); color: var(--text3); transform: none; cursor: not-allowed; }
+
+.modeQuick {
+  display: flex; gap: 4px; flex-wrap: wrap;
+}
+.modeQuickBtn {
+  font-size: 10px; padding: 4px 8px; border-radius: 4px;
+  background: var(--bg3); border: 1px solid var(--border);
+  color: var(--text3); cursor: pointer;
+  font-family: 'JetBrains Mono', monospace;
+  transition: all 0.15s;
+}
+.modeQuickBtn:hover:not(:disabled) { border-color: var(--amber); color: var(--amber); }
+.modeQuickBtn:disabled { opacity: 0.4; cursor: not-allowed; }
